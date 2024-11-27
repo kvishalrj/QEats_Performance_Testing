@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "a966daff-15f8-4b3a-b5d3-38116f528c46",
+		"name": "QEats - Order Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32728584"
+	},
+	"item": [
+		{
+			"name": "Get Cart",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{workspace}}:{{port}}/qeats/v1/cart?userId=1",
+					"host": [
+						"{{workspace}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"qeats",
+						"v1",
+						"cart"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Item",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cartId\": \"3\",\n    \"itemId\": \"1\",\n    \"restaurantId\": \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{workspace}}:{{port}}/qeats/v1/cart/item",
+					"host": [
+						"{{workspace}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"qeats",
+						"v1",
+						"cart",
+						"item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Item",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cartId\": \"3\",\n    \"itemId\": \"1\",\n    \"restaurantId\": \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{workspace}}:{{port}}/qeats/v1/cart/item",
+					"host": [
+						"{{workspace}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"qeats",
+						"v1",
+						"cart",
+						"item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Place Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cartId\": \"3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{workspace}}:{{port}}/qeats/v1/order",
+					"host": [
+						"{{workspace}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"qeats",
+						"v1",
+						"order"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "workspace",
+			"value": "http://3.7.37.36",
+			"type": "string"
+		},
+		{
+			"key": "port",
+			"value": "8083",
+			"type": "string"
+		}
+	]
+}

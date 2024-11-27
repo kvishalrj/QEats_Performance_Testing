@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "6823e336-a835-4882-934a-1095454d3898",
+		"name": "QEats - Restaurant Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32728584"
+	},
+	"item": [
+		{
+			"name": "Get Restaurants",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{workspace}}:{{port}}/qeats/v1/restaurants?latitude=40.71&longitude=-74.003000",
+					"host": [
+						"{{workspace}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"qeats",
+						"v1",
+						"restaurants"
+					],
+					"query": [
+						{
+							"key": "latitude",
+							"value": "40.71"
+						},
+						{
+							"key": "longitude",
+							"value": "-74.003000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Menu",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{workspace}}:{{port}}/qeats/v1/menu?restaurantId=1",
+					"host": [
+						"{{workspace}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"qeats",
+						"v1",
+						"menu"
+					],
+					"query": [
+						{
+							"key": "restaurantId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Menu Item",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{workspace}}:{{port}}/qeats/v1/restaurants/:restaurantId/menu/:menuItemId",
+					"host": [
+						"{{workspace}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"qeats",
+						"v1",
+						"restaurants",
+						":restaurantId",
+						"menu",
+						":menuItemId"
+					],
+					"variable": [
+						{
+							"key": "restaurantId",
+							"value": "1"
+						},
+						{
+							"key": "menuItemId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "workspace",
+			"value": "http://3.7.37.36",
+			"type": "string"
+		},
+		{
+			"key": "port",
+			"value": "8081",
+			"type": "string"
+		}
+	]
+}
